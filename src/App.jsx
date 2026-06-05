@@ -2,13 +2,13 @@ import { useMemo, useState } from "react";
 
 const editorialImages = {
   hero:
-    "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=80",
+    "https://images.unsplash.com/photo-1780685127026-f18b1bc9c449?auto=format&fit=crop&w=1400&q=80",
   boutiqueRack:
-    "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1780685126969-fe68fb1f59cb?auto=format&fit=crop&w=1200&q=80",
   apparel:
-    "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1780685126959-25e11114cd80?auto=format&fit=crop&w=1200&q=80",
   accessories:
-    "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1780685127015-7b40636a6ab1?auto=format&fit=crop&w=1200&q=80",
   handmade:
     "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80",
   packaging:
@@ -19,17 +19,17 @@ const categories = [
   {
     name: "Personalized Apparel",
     description: "Custom shirts and wearable pieces designed around names, occasions, and meaningful details.",
-    image: "https://images.unsplash.com/photo-1554568218-0f1715e72254?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1780685127090-618501db5df7?auto=format&fit=crop&w=900&q=80",
   },
   {
     name: "Boutique Finds",
     description: "Easy everyday fashion pieces selected for comfort, softness, and giftable style.",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1780685126969-fe68fb1f59cb?auto=format&fit=crop&w=900&q=80",
   },
   {
     name: "Accessories",
     description: "Simple add-ons that complete the look without making the shopping experience feel complicated.",
-    image: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1780685126890-8fbde3b8ed76?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -39,21 +39,21 @@ const products = [
     category: "Personalized Apparel",
     price: "From $24",
     description: "A personalized shirt made for birthdays, family events, gifts, or everyday statements.",
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1780685127036-8415e75e4c7a?auto=format&fit=crop&w=900&q=80",
   },
   {
     name: "Faith-Inspired Shirt",
     category: "Personalized Apparel",
     price: "From $26",
     description: "A meaningful apparel piece with custom wording and soft boutique styling.",
-    image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1780685127044-188d6a11d170?auto=format&fit=crop&w=900&q=80",
   },
   {
     name: "Everyday Boutique Top",
     category: "Boutique Finds",
     price: "From $32",
     description: "A soft, easy-to-style piece for casual outfits, errands, and relaxed weekends.",
-    image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1780685126868-f3d8fd83c111?auto=format&fit=crop&w=900&q=80",
   },
   {
     name: "Seasonal Style Pick",
