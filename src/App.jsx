@@ -115,12 +115,12 @@ function CheckIcon({ className = "" }) {
 
 function SectionIntro({ eyebrow, title, text }) {
   return (
-    <div className="mx-auto max-w-3xl text-center">
-      <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#9a6b4f]">{eyebrow}</p>
-      <h2 className="mt-4 text-4xl font-light tracking-[-0.04em] text-[#251813] sm:text-5xl" style={{ fontFamily: "Georgia, serif" }}>
+    <div className="mx-auto max-w-3xl px-1 text-center">
+      <p className="text-[10px] font-semibold uppercase leading-5 tracking-[0.22em] text-[#9a6b4f] sm:text-xs sm:tracking-[0.32em]">{eyebrow}</p>
+      <h2 className="mt-4 text-3xl font-light leading-tight tracking-[-0.04em] text-[#251813] sm:text-5xl" style={{ fontFamily: "Georgia, serif" }}>
         {title}
       </h2>
-      {text && <p className="mt-5 text-base leading-8 text-[#6f625b]">{text}</p>}
+      {text && <p className="mt-4 text-sm leading-7 text-[#6f625b] sm:mt-5 sm:text-base sm:leading-8">{text}</p>}
     </div>
   );
 }
@@ -130,21 +130,21 @@ function ProductCard({ product, onAdd }) {
     <article className="group bg-white">
       <div className="relative aspect-[4/5] overflow-hidden bg-[#efe8dc]">
         <img src={product.image} alt={product.name} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
-        <div className="absolute left-4 top-4 rounded-full bg-white/85 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3b2921] backdrop-blur">
+        <div className="absolute left-3 top-3 max-w-[calc(100%-1.5rem)] rounded-full bg-white/90 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#3b2921] backdrop-blur sm:left-4 sm:top-4 sm:px-4 sm:text-[11px] sm:tracking-[0.18em]">
           {product.category}
         </div>
       </div>
-      <div className="border-x border-b border-[#e2d6c8] p-5">
-        <div className="flex items-start justify-between gap-4">
-          <h3 className="text-xl font-light tracking-[-0.03em] text-[#251813]" style={{ fontFamily: "Georgia, serif" }}>
+      <div className="border-x border-b border-[#e2d6c8] p-4 sm:p-5">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+          <h3 className="text-lg font-light leading-snug tracking-[-0.03em] text-[#251813] sm:text-xl" style={{ fontFamily: "Georgia, serif" }}>
             {product.name}
           </h3>
           <p className="whitespace-nowrap text-sm font-semibold text-[#251813]">{product.price}</p>
         </div>
-        <p className="mt-3 min-h-14 text-sm leading-6 text-[#6f625b]">{product.description}</p>
+        <p className="mt-3 text-sm leading-6 text-[#6f625b] sm:min-h-14">{product.description}</p>
         <button
           onClick={() => onAdd(product)}
-          className="mt-5 flex w-full items-center justify-center gap-2 border border-[#251813] px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#251813] transition hover:bg-[#251813] hover:text-white"
+          className="mt-5 flex w-full items-center justify-center gap-2 border border-[#251813] px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#251813] transition hover:bg-[#251813] hover:text-white sm:px-5 sm:text-xs sm:tracking-[0.22em]"
         >
           Add to concept cart <ArrowIcon className="h-4 w-4" />
         </button>
@@ -175,18 +175,18 @@ export default function App() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#f8f2ea] text-[#251813]">
-      <div className="bg-[#251813] px-5 py-3 text-center text-xs font-semibold uppercase tracking-[0.24em] text-[#f8f2ea]">
+    <main className="min-h-screen overflow-x-hidden bg-[#f8f2ea] text-[#251813]">
+      <div className="bg-[#251813] px-4 py-2 text-center text-[10px] font-semibold uppercase leading-5 tracking-[0.14em] text-[#f8f2ea] sm:px-5 sm:py-3 sm:text-xs sm:tracking-[0.24em]">
         Special Blessings Shop concept redesign · Boutique apparel and personalized gifts
       </div>
 
       <header className="sticky top-0 z-50 border-b border-[#e2d6c8] bg-[#f8f2ea]/90 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-5 sm:py-5 lg:px-8">
           <a href="#top" className="leading-none">
-            <p className="text-2xl font-light tracking-[-0.05em]" style={{ fontFamily: "Georgia, serif" }}>
+            <p className="text-xl font-light tracking-[-0.04em] sm:text-2xl sm:tracking-[-0.05em]" style={{ fontFamily: "Georgia, serif" }}>
               Special Blessings
             </p>
-            <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.32em] text-[#9a6b4f]">Boutique & Custom Apparel</p>
+            <p className="mt-1 text-[9px] font-semibold uppercase leading-4 tracking-[0.18em] text-[#9a6b4f] sm:text-[10px] sm:tracking-[0.32em]">Boutique & Custom Apparel</p>
           </a>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -206,16 +206,16 @@ export default function App() {
             </a>
           </div>
 
-          <button onClick={() => setMenuOpen(!menuOpen)} className="border border-[#cdbdaa] px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em] lg:hidden">
+          <button onClick={() => setMenuOpen(!menuOpen)} className="shrink-0 border border-[#cdbdaa] px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.16em] lg:hidden">
             Menu
           </button>
         </div>
 
         {menuOpen && (
-          <div className="border-t border-[#e2d6c8] px-5 py-5 lg:hidden">
+          <div className="border-t border-[#e2d6c8] px-4 py-4 lg:hidden">
             <div className="grid gap-3">
               {navLinks.map((link) => (
-                <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="bg-white px-4 py-4 text-sm font-semibold text-[#251813]">
+                <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="bg-white px-4 py-3 text-sm font-semibold text-[#251813]">
                   {link.label}
                 </a>
               ))}
@@ -224,27 +224,27 @@ export default function App() {
         )}
       </header>
 
-      <section id="top" className="mx-auto grid max-w-7xl gap-8 px-5 py-10 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:py-16">
-        <div className="flex flex-col justify-between bg-[#eadfd2] p-8 sm:p-12 lg:min-h-[720px]">
+      <section id="top" className="mx-auto grid max-w-7xl gap-4 px-4 py-6 sm:gap-8 sm:px-5 sm:py-10 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:py-16">
+        <div className="flex flex-col justify-between bg-[#eadfd2] p-6 sm:p-10 lg:min-h-[720px] lg:p-12">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#9a6b4f]">Nicholasville, Kentucky</p>
-            <h1 className="mt-8 max-w-3xl text-6xl font-light leading-[0.94] tracking-[-0.07em] text-[#251813] sm:text-7xl lg:text-8xl" style={{ fontFamily: "Georgia, serif" }}>
+            <p className="text-[10px] font-semibold uppercase leading-5 tracking-[0.22em] text-[#9a6b4f] sm:text-xs sm:tracking-[0.32em]">Nicholasville, Kentucky</p>
+            <h1 className="mt-6 max-w-3xl text-5xl font-light leading-[0.96] tracking-[-0.055em] text-[#251813] sm:mt-8 sm:text-7xl sm:tracking-[-0.07em] lg:text-8xl" style={{ fontFamily: "Georgia, serif" }}>
               Boutique pieces with a personal touch.
             </h1>
-            <p className="mt-8 max-w-xl text-lg leading-8 text-[#5b4b42]">
+            <p className="mt-6 max-w-xl text-base leading-7 text-[#5b4b42] sm:mt-8 sm:text-lg sm:leading-8">
               A fashion-forward e-commerce concept for Special Blessings Shop, designed to make personalized apparel, boutique clothing, accessories, and gifts feel easier to browse and safer to buy.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#shop" className="inline-flex items-center justify-center gap-3 bg-[#251813] px-7 py-4 text-xs font-semibold uppercase tracking-[0.24em] text-white transition hover:bg-[#9a6b4f]">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
+              <a href="#shop" className="inline-flex items-center justify-center gap-3 bg-[#251813] px-5 py-3.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#9a6b4f] sm:px-7 sm:py-4 sm:text-xs sm:tracking-[0.24em]">
                 Shop the edit <ArrowIcon className="h-4 w-4" />
               </a>
-              <a href="#custom" className="inline-flex items-center justify-center border border-[#bca78e] px-7 py-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#251813] transition hover:border-[#251813]">
+              <a href="#custom" className="inline-flex items-center justify-center border border-[#bca78e] px-5 py-3.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#251813] transition hover:border-[#251813] sm:px-7 sm:py-4 sm:text-xs sm:tracking-[0.24em]">
                 Custom order guide
               </a>
             </div>
           </div>
 
-          <div className="mt-12 grid grid-cols-3 gap-3 border-t border-[#cdbdaa] pt-8">
+          <div className="mt-10 grid grid-cols-1 gap-4 border-t border-[#cdbdaa] pt-6 sm:mt-12 sm:grid-cols-3 sm:gap-3 sm:pt-8">
             {[
               ["01", "Clear categories"],
               ["02", "Custom order steps"],
@@ -259,18 +259,18 @@ export default function App() {
         </div>
 
         <div className="grid gap-4 sm:grid-cols-[1fr_0.72fr]">
-          <div className="relative min-h-[520px] overflow-hidden lg:min-h-[720px]">
+          <div className="relative min-h-[360px] overflow-hidden sm:min-h-[520px] lg:min-h-[720px]">
             <img src={editorialImages.hero} alt="Boutique shopping editorial" className="h-full w-full object-cover" />
-            <div className="absolute bottom-6 left-6 max-w-xs bg-white/88 p-5 backdrop-blur">
+            <div className="absolute bottom-4 left-4 right-4 bg-white/90 p-4 backdrop-blur sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-xs sm:p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#9a6b4f]">Featured direction</p>
-              <p className="mt-2 text-2xl font-light tracking-[-0.04em]" style={{ fontFamily: "Georgia, serif" }}>
+              <p className="mt-2 text-xl font-light leading-tight tracking-[-0.04em] sm:text-2xl" style={{ fontFamily: "Georgia, serif" }}>
                 Soft neutrals, clean product stories, and editorial shopping moments.
               </p>
             </div>
           </div>
           <div className="grid gap-4">
-            <img src={editorialImages.boutiqueRack} alt="Boutique clothing rack" className="h-full min-h-[250px] w-full object-cover" />
-            <div className="bg-white p-6">
+            <img src={editorialImages.boutiqueRack} alt="Boutique clothing rack" className="h-full min-h-[220px] w-full object-cover sm:min-h-[250px]" />
+            <div className="bg-white p-5 sm:p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#9a6b4f]">Concept cart</p>
               <p className="mt-3 text-5xl font-light" style={{ fontFamily: "Georgia, serif" }}>
                 {cart.length}
@@ -281,7 +281,7 @@ export default function App() {
         </div>
       </section>
 
-      <section className="px-5 py-16 lg:px-8">
+      <section className="px-4 py-12 sm:px-5 sm:py-16 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionIntro
             eyebrow="Curated collections"
@@ -289,18 +289,18 @@ export default function App() {
             text="Instead of a plain catalog, the store should guide customers through visual departments that match how boutique buyers browse."
           />
 
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:mt-12 md:grid-cols-3">
             {categories.map((category) => (
               <a key={category.name} href="#shop" onClick={() => setActiveCategory(category.name)} className="group block bg-white">
                 <div className="aspect-[3/4] overflow-hidden bg-[#eadfd2]">
                   <img src={category.image} alt={category.name} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
                 </div>
-                <div className="border-x border-b border-[#e2d6c8] p-6">
-                  <h3 className="text-3xl font-light tracking-[-0.04em]" style={{ fontFamily: "Georgia, serif" }}>
+                <div className="border-x border-b border-[#e2d6c8] p-5 sm:p-6">
+                  <h3 className="text-2xl font-light leading-tight tracking-[-0.04em] sm:text-3xl" style={{ fontFamily: "Georgia, serif" }}>
                     {category.name}
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-[#6f625b]">{category.description}</p>
-                  <p className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#9a6b4f]">
+                  <p className="mt-5 inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9a6b4f] sm:text-xs sm:tracking-[0.22em]">
                     View category <ArrowIcon className="h-4 w-4" />
                   </p>
                 </div>
@@ -310,12 +310,12 @@ export default function App() {
         </div>
       </section>
 
-      <section id="shop" className="bg-white px-5 py-16 lg:px-8 lg:py-24">
+      <section id="shop" className="bg-white px-4 py-12 sm:px-5 sm:py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#9a6b4f]">Shop the edit</p>
-              <h2 className="mt-4 max-w-3xl text-5xl font-light tracking-[-0.06em] sm:text-6xl" style={{ fontFamily: "Georgia, serif" }}>
+              <p className="text-[10px] font-semibold uppercase leading-5 tracking-[0.22em] text-[#9a6b4f] sm:text-xs sm:tracking-[0.32em]">Shop the edit</p>
+              <h2 className="mt-4 max-w-3xl text-4xl font-light leading-tight tracking-[-0.05em] sm:text-6xl sm:tracking-[-0.06em]" style={{ fontFamily: "Georgia, serif" }}>
                 Product cards built for clarity, not clutter.
               </h2>
             </div>
@@ -324,12 +324,12 @@ export default function App() {
             </p>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-8 flex gap-2 overflow-x-auto pb-2 sm:mt-10 sm:flex-wrap sm:gap-3 sm:overflow-visible sm:pb-0">
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveCategory(filter)}
-                className={`border px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] transition ${
+                className={`shrink-0 border px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.16em] transition sm:px-5 sm:text-xs sm:tracking-[0.2em] ${
                   activeCategory === filter
                     ? "border-[#251813] bg-[#251813] text-white"
                     : "border-[#cdbdaa] bg-white text-[#5b4b42] hover:border-[#251813]"
@@ -340,7 +340,7 @@ export default function App() {
             ))}
           </div>
 
-          <div className="mt-10 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:mt-10 md:grid-cols-2 xl:grid-cols-3">
             {filteredProducts.map((product) => (
               <ProductCard key={product.name} product={product} onAdd={(item) => setCart((current) => [...current, item])} />
             ))}
@@ -348,7 +348,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="lookbook" className="px-5 py-16 lg:px-8 lg:py-24">
+      <section id="lookbook" className="px-4 py-12 sm:px-5 sm:py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <SectionIntro
             eyebrow="Fashion-first direction"
@@ -356,8 +356,8 @@ export default function App() {
             text="This section creates a lookbook feel so the brand can show product lifestyle, outfit ideas, handmade touches, and gift moments."
           />
 
-          <div className="mt-12 grid gap-4 lg:grid-cols-4 lg:grid-rows-[260px_260px]">
-            <div className="relative overflow-hidden lg:col-span-2 lg:row-span-2">
+          <div className="mt-10 grid gap-4 sm:mt-12 lg:grid-cols-4 lg:grid-rows-[260px_260px]">
+            <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[5/4] lg:col-span-2 lg:row-span-2 lg:aspect-auto">
               <img src={editorialImages.apparel} alt="Fashion apparel lookbook" className="h-full w-full object-cover" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-7 text-white">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em]">Apparel styling</p>
@@ -366,36 +366,36 @@ export default function App() {
                 </h3>
               </div>
             </div>
-            <div className="overflow-hidden">
-              <img src={editorialImages.accessories} alt="Boutique accessories" className="h-full min-h-[260px] w-full object-cover" />
+            <div className="aspect-[4/5] overflow-hidden lg:aspect-auto">
+              <img src={editorialImages.accessories} alt="Boutique accessories" className="h-full min-h-[240px] w-full object-cover sm:min-h-[260px]" />
             </div>
-            <div className="bg-[#eadfd2] p-8">
+            <div className="bg-[#eadfd2] p-6 sm:p-8">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#9a6b4f]">Trust cue</p>
               <p className="mt-4 text-3xl font-light tracking-[-0.04em]" style={{ fontFamily: "Georgia, serif" }}>
                 Use customer photos, reviews, and social proof once collected.
               </p>
             </div>
-            <div className="bg-[#251813] p-8 text-white">
+            <div className="bg-[#251813] p-6 text-white sm:p-8">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d9c6b3]">Backend note</p>
               <p className="mt-4 text-3xl font-light tracking-[-0.04em]" style={{ fontFamily: "Georgia, serif" }}>
                 Organize products by category, occasion, and customization type.
               </p>
             </div>
-            <div className="overflow-hidden">
-              <img src={editorialImages.handmade} alt="Handmade gift process" className="h-full min-h-[260px] w-full object-cover" />
+            <div className="aspect-[4/5] overflow-hidden lg:aspect-auto">
+              <img src={editorialImages.handmade} alt="Handmade gift process" className="h-full min-h-[240px] w-full object-cover sm:min-h-[260px]" />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="custom" className="bg-[#251813] px-5 py-16 text-white lg:px-8 lg:py-24">
+      <section id="custom" className="bg-[#251813] px-4 py-12 text-white sm:px-5 sm:py-16 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#d9c6b3]">Custom order guide</p>
-            <h2 className="mt-4 text-5xl font-light tracking-[-0.06em] sm:text-6xl" style={{ fontFamily: "Georgia, serif" }}>
+            <h2 className="mt-4 text-4xl font-light leading-tight tracking-[-0.05em] sm:text-6xl sm:tracking-[-0.06em]" style={{ fontFamily: "Georgia, serif" }}>
               Make personalization feel simple.
             </h2>
-            <p className="mt-6 max-w-xl text-base leading-8 text-[#d9c6b3]">
+            <p className="mt-5 max-w-xl text-sm leading-7 text-[#d9c6b3] sm:mt-6 sm:text-base sm:leading-8">
               Custom apparel needs clear steps. Shoppers should understand what to choose, what to submit, and what happens after the order is placed.
             </p>
           </div>
@@ -406,9 +406,9 @@ export default function App() {
               ["02", "Add the details", "Submit names, wording, theme, or design notes."],
               ["03", "Confirm with confidence", "Review personalization, policies, and contact options."],
             ].map(([step, title, text]) => (
-              <div key={step} className="border border-white/15 p-7">
+              <div key={step} className="border border-white/15 p-6 sm:p-7">
                 <p className="text-sm font-semibold text-[#d9c6b3]">{step}</p>
-                <h3 className="mt-8 text-3xl font-light tracking-[-0.04em]" style={{ fontFamily: "Georgia, serif" }}>
+                <h3 className="mt-6 text-2xl font-light leading-tight tracking-[-0.04em] sm:mt-8 sm:text-3xl" style={{ fontFamily: "Georgia, serif" }}>
                   {title}
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-[#d9c6b3]">{text}</p>
@@ -418,13 +418,13 @@ export default function App() {
         </div>
       </section>
 
-      <section id="story" className="px-5 py-16 lg:px-8 lg:py-24">
+      <section id="story" className="px-4 py-12 sm:px-5 sm:py-16 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div className="grid grid-cols-2 gap-4">
-            <img src={editorialImages.packaging} alt="Boutique packaging" className="h-[520px] w-full object-cover" />
-            <div className="grid gap-4 pt-16">
-              <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=900&q=80" alt="Boutique shirt detail" className="h-64 w-full object-cover" />
-              <div className="bg-[#eadfd2] p-6">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <img src={editorialImages.packaging} alt="Boutique packaging" className="h-[360px] w-full object-cover sm:h-[520px]" />
+            <div className="grid gap-4 pt-0 sm:pt-16">
+              <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=900&q=80" alt="Boutique shirt detail" className="h-56 w-full object-cover sm:h-64" />
+              <div className="bg-[#eadfd2] p-5 sm:p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#9a6b4f]">Brand promise</p>
                 <p className="mt-3 text-2xl font-light tracking-[-0.04em]" style={{ fontFamily: "Georgia, serif" }}>
                   Personal, warm, and easy to shop.
@@ -434,15 +434,15 @@ export default function App() {
           </div>
 
           <div className="lg:pl-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#9a6b4f]">Brand story</p>
-            <h2 className="mt-4 text-5xl font-light tracking-[-0.06em] sm:text-6xl" style={{ fontFamily: "Georgia, serif" }}>
+            <p className="text-[10px] font-semibold uppercase leading-5 tracking-[0.22em] text-[#9a6b4f] sm:text-xs sm:tracking-[0.32em]">Brand story</p>
+            <h2 className="mt-4 text-4xl font-light leading-tight tracking-[-0.05em] sm:text-6xl sm:tracking-[-0.06em]" style={{ fontFamily: "Georgia, serif" }}>
               More than products, the store needs a stronger boutique identity.
             </h2>
-            <p className="mt-6 text-base leading-8 text-[#6f625b]">
+            <p className="mt-5 text-sm leading-7 text-[#6f625b] sm:mt-6 sm:text-base sm:leading-8">
               Special Blessings Shop should present its family-owned story, boutique selection, personalized apparel, and handmade gift angle in a way that feels intentional. The design direction moves away from a plain storefront and toward a warm fashion boutique experience.
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 sm:gap-4">
               {[
                 "Clear homepage offer",
                 "Consistent product imagery",
@@ -459,33 +459,33 @@ export default function App() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-16 lg:px-8 lg:py-24">
+      <section className="bg-white px-4 py-12 sm:px-5 sm:py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-4xl">
           <SectionIntro eyebrow="FAQ" title="Remove hesitation before checkout." />
-          <div className="mt-10 space-y-3">
+          <div className="mt-8 space-y-3 sm:mt-10">
             {faqs.map((faq, index) => (
               <div key={faq.q} className="border border-[#e2d6c8]">
-                <button onClick={() => setOpenFaq(openFaq === index ? -1 : index)} className="flex w-full items-center justify-between gap-6 bg-[#f8f2ea] px-6 py-5 text-left">
-                  <span className="text-lg font-light tracking-[-0.03em]" style={{ fontFamily: "Georgia, serif" }}>
+                <button onClick={() => setOpenFaq(openFaq === index ? -1 : index)} className="flex w-full items-center justify-between gap-4 bg-[#f8f2ea] px-4 py-4 text-left sm:gap-6 sm:px-6 sm:py-5">
+                  <span className="text-base font-light leading-snug tracking-[-0.03em] sm:text-lg" style={{ fontFamily: "Georgia, serif" }}>
                     {faq.q}
                   </span>
                   <span className="text-2xl font-light">{openFaq === index ? "−" : "+"}</span>
                 </button>
-                {openFaq === index && <p className="px-6 pb-6 pt-1 text-sm leading-7 text-[#6f625b]">{faq.a}</p>}
+                {openFaq === index && <p className="px-4 pb-5 pt-1 text-sm leading-7 text-[#6f625b] sm:px-6 sm:pb-6">{faq.a}</p>}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="px-5 py-16 lg:px-8 lg:py-24">
+      <section id="contact" className="px-4 py-12 sm:px-5 sm:py-16 lg:px-8 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-0 overflow-hidden bg-[#eadfd2] lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="p-8 sm:p-12 lg:p-16">
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#9a6b4f]">Contact and policies</p>
-            <h2 className="mt-4 text-5xl font-light tracking-[-0.06em] sm:text-6xl" style={{ fontFamily: "Georgia, serif" }}>
+          <div className="p-6 sm:p-10 lg:p-16">
+            <p className="text-[10px] font-semibold uppercase leading-5 tracking-[0.22em] text-[#9a6b4f] sm:text-xs sm:tracking-[0.32em]">Contact and policies</p>
+            <h2 className="mt-4 text-4xl font-light leading-tight tracking-[-0.05em] sm:text-6xl sm:tracking-[-0.06em]" style={{ fontFamily: "Georgia, serif" }}>
               Make support easy to find.
             </h2>
-            <p className="mt-6 text-base leading-8 text-[#5b4b42]">
+            <p className="mt-5 text-sm leading-7 text-[#5b4b42] sm:mt-6 sm:text-base sm:leading-8">
               A boutique store should make contact details, policies, and next steps visible so first-time shoppers feel confident before placing an order.
             </p>
             <div className="mt-8 grid gap-3 text-sm text-[#5b4b42]">
@@ -496,33 +496,33 @@ export default function App() {
             </div>
           </div>
 
-          <div className="bg-[#251813] p-8 text-white sm:p-12 lg:p-16">
+          <div className="bg-[#251813] p-6 text-white sm:p-10 lg:p-16">
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#d9c6b3]">Recommended pages</p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-2">
               {["Shipping Policy", "Return & Refund Policy", "Privacy Policy", "Terms of Service", "FAQ", "Custom Order Guide"].map((page) => (
-                <div key={page} className="border border-white/15 p-5 text-sm font-semibold text-[#f8f2ea]">
+                <div key={page} className="border border-white/15 p-4 text-sm font-semibold text-[#f8f2ea] sm:p-5">
                   {page}
                 </div>
               ))}
             </div>
-            <a href="#shop" className="mt-10 inline-flex items-center justify-center gap-3 bg-white px-7 py-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#251813] transition hover:bg-[#d9c6b3]">
+            <a href="#shop" className="mt-8 inline-flex items-center justify-center gap-3 bg-white px-5 py-3.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#251813] transition hover:bg-[#d9c6b3] sm:mt-10 sm:px-7 sm:py-4 sm:text-xs sm:tracking-[0.24em]">
               Return to shop <ArrowIcon className="h-4 w-4" />
             </a>
           </div>
         </div>
       </section>
 
-      <footer className="border-t border-[#e2d6c8] px-5 py-10 lg:px-8">
+      <footer className="border-t border-[#e2d6c8] px-4 py-8 sm:px-5 sm:py-10 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center">
           <div>
-            <p className="text-2xl font-light tracking-[-0.05em]" style={{ fontFamily: "Georgia, serif" }}>
+            <p className="text-xl font-light tracking-[-0.04em] sm:text-2xl sm:tracking-[-0.05em]" style={{ fontFamily: "Georgia, serif" }}>
               Special Blessings Shop
             </p>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-[#6f625b]">
               Concept redesign for a warmer boutique shopping experience with stronger imagery, clearer custom-order flow, and trust-focused e-commerce structure.
             </p>
           </div>
-          <div className="flex flex-wrap gap-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#6f625b]">
+          <div className="flex flex-wrap gap-3 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#6f625b] sm:gap-4 sm:text-xs sm:tracking-[0.22em]">
             <a href="#shop" className="hover:text-[#251813]">Shop</a>
             <a href="#lookbook" className="hover:text-[#251813]">Lookbook</a>
             <a href="#custom" className="hover:text-[#251813]">Custom</a>
